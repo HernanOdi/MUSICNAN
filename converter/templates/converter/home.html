@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interfaz de Música</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <!-- Encabezado con el texto "IMAGE TO MUSIC" y botones simulados -->
+  <div class="header">
+    <div class="window-controls">
+      <span class="btn close"></span>
+      <span class="btn minimize"></span>
+      <span class="btn maximize"></span>
+    </div>
+    <h1 class="title">IMAGE TO MUSIC</h1>
+  </div>
+
+  <!-- Contenedor principal de la música -->
+  <div class="music-container">
+    <!-- Imagen del "disco" que se sustituye con la imagen subida -->
+    <div class="left-panel">
+      <div class="circle-disk">
+        {% if uploaded_image_url %}
+        <img src="{{ uploaded_image_url }}" alt="Imagen Subida">
+        {% else %}
+        <div class="placeholder-disk"></div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Nube blanca con los controles de reproducción -->
+    <div class="right-panel">
+      <div class="audio-controls-cloud">
+        <div class="controls-panel">
+          <button class="control-button">⏮️</button>
+          <button class="control-button">⏯️</button>
+          <button class="control-button">⏭️</button>
+        </div>
+        <input type="range" class="progress-bar" min="0" max="100" value="50">
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario para subir la imagen -->
+  <div class="file-upload">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="imagen" accept="image/*" required>
+      <button type="submit">Subir Imagen</button>
+    </form>
+  </div>
+</body>
+</html>

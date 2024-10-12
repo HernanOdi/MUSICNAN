@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Encabezado superior con botones simulados */
+  .header {
+    background-color: #00ADEF;
+    width: 900px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  .title {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .window-controls {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .window-controls .btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .btn.close { background-color: #ff605c; }
+  .btn.minimize { background-color: #ffbd44; }
+  .btn.maximize { background-color: #00ca4e; }
+  
+  /* Contenedor principal de la música */
+  .music-container {
+    background-color: #00ADEF;
+    width: 900px;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenedor de la imagen con fondo transparente */
+  .circle-disk {
+    width: 400px;  /* Ancho fijo */
+    height: 300px; /* Alto fijo */
+    background-color: transparent; /* Fondo transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Ajustar la imagen dentro del contenedor */
+  .circle-disk img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Ajuste dinámico para que no se recorte la imagen */
+  }
+  
+  /* Panel derecho - Controles de música */
+  .right-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .audio-controls-cloud {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .controls-panel {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .control-button {
+    background-color: #00ADEF;
+    border: none;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .progress-bar {
+    width: 300px;
+    height: 5px;
+    background-color: #00ADEF;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Formulario para subir imagen */
+  .file-upload {
+    margin-top: 20px;
+  }
+  
+  .file-upload input[type="file"] {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .file-upload button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
